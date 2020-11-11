@@ -26,7 +26,7 @@ public class Inventario extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getBaseContext(), parent.getItemAtPosition(position).toString() , Toast.LENGTH_LONG).show();
+                 Toast.makeText(getBaseContext(), parent.getItemAtPosition(position).toString() , Toast.LENGTH_LONG).show();
             }
 
             @Override
