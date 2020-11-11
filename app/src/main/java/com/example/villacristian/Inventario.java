@@ -21,6 +21,7 @@ public class Inventario extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventario_layout);
+        //SE CONECTE AQUI AL WEB SERVICE PILLE LOS DATOS Y LOS PARSEAMOS Y LOS METEMOS EN UN ARRAYLIST LOS METEMOS EN EL SPINNER Y A RAIZ DE LOS DATOS ABRIMOS INVENTARIO WORKORDERS
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

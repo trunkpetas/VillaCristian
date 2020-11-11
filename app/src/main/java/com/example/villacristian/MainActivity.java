@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.logging.Logger;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText user;
@@ -37,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 usuario = user.getText().toString();
                 contrasenha = password.getText().toString();
+                    System.out.println("aqui estoy recogiendo los datos itnroducidos");
                 if(usuario.equals(usuarioPrueba) && contrasenha.equals(contrasenhaPrueba)){
+                    System.out.println("okay los valido, si apso por auqi estan bien");
                     Intent intent = new Intent(getApplicationContext(), PruebaFuncional.class);
                     startActivity(intent);
                 }
