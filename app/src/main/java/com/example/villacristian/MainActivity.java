@@ -11,6 +11,15 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.ksoap2.SoapEnvelope;
+import org.ksoap2.SoapFault;
+import org.ksoap2.serialization.SoapObject;
+import org.ksoap2.serialization.SoapPrimitive;
+import org.ksoap2.serialization.SoapSerializationEnvelope;
+import org.ksoap2.transport.HttpTransportSE;
+import org.xmlpull.v1.XmlPullParserException;
+import java.io.IOException;
+import org.kxml2.io.KXmlSerializer;
 public class MainActivity extends AppCompatActivity {
 
     EditText user;
@@ -28,18 +37,55 @@ public class MainActivity extends AppCompatActivity {
         user = (EditText) findViewById(R.id.user);
         password = (EditText) findViewById(R.id.password);
         btnLogin = (Button) findViewById(R.id.btnLogin);
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                usuario = user.getText().toString();
-                contrasenha = password.getText().toString();
+               System.out.println("POR AQUI PASO");
+
+               final String NAMESPACE = "LoginFeature";final String URL="http://80.29.62.72/LoginFeature?wsdl";
+               final String METHOD_NAME = "accessUser";final String SOAP_ACTION = "http://interfaces/accessUser";
+
+               SoapObject so = new SoapObject(NAMESPACE,METHOD_NAME);
+
+               so.addProperty("arg0",usuario = user.getText().toString());
+               so.addProperty( "arg1", contrasenha = password.getText().toString());
+
+                System.out.println(so.getProperty("arg0"));
+                System.out.println(so.getProperty("arg1"));
+
+               SoapSerializationEnvelope sse = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+                //response = (SoapObject) envelope.bodyIn;
+                sse.setOutputSoapObject(so);
+
+                HttpTransportSE htse = new HttpTransportSE(URL);
+                System.out.println(htse +  "!");
+                try {
+                    htse.call(SOAP_ACTION,sse);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                 SoapPrimitive response = null;
+
+                    response = (SoapPrimitive)sse.bodyIn;
+                    System.out.println(sse.bodyIn +  "resultado1");
+
+
+                String resultado=response.toString();
+                System.out.println("ResultadoOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " + resultado);
+                Intent intent = new Intent(getApplicationContext(), MenuFeatures.class);
+                startActivity(intent);
+
+               /* usuario = user.getText().toString();
+                 contrasenha = password.getText().toString();
                     System.out.println("aqui estoy recogiendo los datos itnroducidos");
                 if(usuario.equals(usuarioPrueba) && contrasenha.equals(contrasenhaPrueba)){
                     System.out.println("okay los valido, si apso por auqi estan bien");
-                    Intent intent = new Intent(getApplicationContext(), MenuFeatures.class);
-                    startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), MenuFeatures.class);
+                startActivity(intent);
                 }
-
+*/
             }
         });
     }

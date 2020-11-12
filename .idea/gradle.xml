@@ -11,6 +11,12 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/javax.ws.rs-api-2.0-m02" />
+            <option value="$PROJECT_DIR$/javax.ws.rs-api-2.0-m02-javadoc" />
+            <option value="$PROJECT_DIR$/javax.ws.rs-api-2.0-m02-sources" />
+            <option value="$PROJECT_DIR$/ksoap2-android-2.5.22" />
+            <option value="$PROJECT_DIR$/ksoap2-android-assembly-3.4.0-jar-with-dependencies" />
+            <option value="$PROJECT_DIR$/kxml2-min-2.3.0" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

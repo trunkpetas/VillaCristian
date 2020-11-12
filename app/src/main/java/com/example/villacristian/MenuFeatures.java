@@ -5,13 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DateFormat;
 import java.util.Date;
-
 
 public class MenuFeatures extends AppCompatActivity {
     EditText e;
@@ -26,6 +24,9 @@ public class MenuFeatures extends AppCompatActivity {
         btn_inventario = (Button)findViewById(R.id.btn_inventario);
         btn_auditoria = (Button)findViewById(R.id.btn_auditoria);
         e = (EditText)findViewById(R.id.editText);
+
+        /*---------------------------TODOS LOS LISTENERS------------------------------*/
+        //listenerCodificiacion
         btnCodificacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +34,7 @@ public class MenuFeatures extends AppCompatActivity {
                 e.setText(currentDateTimeString);
             }
         });
+        //listenerInventario
         btn_inventario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +42,7 @@ public class MenuFeatures extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //listenerAuditoria
         btn_auditoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

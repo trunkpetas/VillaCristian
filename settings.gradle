@@ -1,2 +1,2 @@
 rootProject.name='VillaCristian'
-include ':app'
+include ':app', ':javax.ws.rs-api-2.0-m02-javadoc', ':javax.ws.rs-api-2.0-m02-sources', ':javax.ws.rs-api-2.0-m02', ':ksoap2-android-2.5.22', ':kxml2-min-2.3.0', ':ksoap2-android-assembly-3.4.0-jar-with-dependencies'
