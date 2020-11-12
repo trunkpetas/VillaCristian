@@ -6,12 +6,17 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">FuncionandoSinFuncionar</string>
     <string name="previous">Previous</string>
-    <string-array name="aves">
+    <string-array name="mery">
         <item>ma</item>
         <item>gi</item>
         <item>ca</item>
         <item>men</item>
         <item>te</item>
+    </string-array>
+    <string-array name="potter">
+        <item>po</item>
+        <item>rro</item>
+
     </string-array>
     <string name="hello_first_fragment">Prueba Cristian y Alejandro</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>

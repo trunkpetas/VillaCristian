@@ -3,19 +3,13 @@ package com.example.villacristian;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
-
-import java.util.logging.Logger;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     System.out.println("aqui estoy recogiendo los datos itnroducidos");
                 if(usuario.equals(usuarioPrueba) && contrasenha.equals(contrasenhaPrueba)){
                     System.out.println("okay los valido, si apso por auqi estan bien");
-                    Intent intent = new Intent(getApplicationContext(), PruebaFuncional.class);
+                    Intent intent = new Intent(getApplicationContext(), MenuFeatures.class);
                     startActivity(intent);
                 }
 

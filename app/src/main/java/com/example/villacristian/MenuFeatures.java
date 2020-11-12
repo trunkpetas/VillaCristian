@@ -3,12 +3,8 @@ package com.example.villacristian;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,16 +13,18 @@ import java.text.DateFormat;
 import java.util.Date;
 
 
-public class PruebaFuncional extends AppCompatActivity {
-EditText e;
-Button btnCodificacion;
-    Button inventario;
+public class MenuFeatures extends AppCompatActivity {
+    EditText e;
+    Button btnCodificacion;
+    Button btn_inventario;
+    Button btn_auditoria;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.prueba);
-        btnCodificacion = (Button)findViewById(R.id.button17) ;
-        inventario = (Button)findViewById(R.id.button19);
+        setContentView(R.layout.menu_features);
+        btnCodificacion = (Button)findViewById(R.id.btn_codificacion) ;
+        btn_inventario = (Button)findViewById(R.id.btn_inventario);
+        btn_auditoria = (Button)findViewById(R.id.btn_auditoria);
         e = (EditText)findViewById(R.id.editText);
         btnCodificacion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,10 +33,17 @@ Button btnCodificacion;
                 e.setText(currentDateTimeString);
             }
         });
-        inventario.setOnClickListener(new View.OnClickListener() {
+        btn_inventario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Inventario.class);
+                startActivity(intent);
+            }
+        });
+        btn_auditoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Auditoria.class);
                 startActivity(intent);
             }
         });
